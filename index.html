@@ -1,0 +1,63 @@
+
+    <html>
+        <head>
+            <link rel="stylesheet" href="/static/style.css">
+           
+          </head>
+          <body>
+        <div class="testbox">
+            <form method="POST">
+{{if .Success}}
+    <div class="testbox">
+            <div class="item">
+            <p style="text-align: left;"color=blue><b>OUTPUT</b><span class="required"></span></p></br>
+            <textarea id ="targetarea" rows="10" cols="50" width=800 height=200 version := HTMLVersion.DetectFromString(address)>
+                    
+            Header Count(Total no of Headings): "{{.HeaderCount}}" 
+            ***************************************************  
+            Login Page(If login page available:True, Unavailable:False): "{{.LoginPage}}"
+            ***************************************************
+            Title(Title of the webpage): "{{.Title}}"  
+            ***************************************************
+            Internal Links and Their count(Returns Entire Internal Link of the Webpage): "{{.Intlinkssount}}"   "{{.ILinks}}"  
+            ***************************************************
+            External Links and Their count(Returns Entire External Link of the Webpage):"{{.Extlinkscount}}" "{{.ELinks}}"
+            ***************************************************
+            Broken Links and Their count(Broken Link of the page): "{{.Blinkscount}}" "{{.BLinks}}"  
+            ***************************************************
+            Domain(Returns the Domain Name): "{{.DomainValue}}"
+            ***************************************************
+            Details(Entire html of WebPage):"{{.Details}}"
+            ***************************************************
+            
+            </textarea>
+            </div>
+    </div>
+{{else}}
+
+      <div class="banner">
+        <h1 style="text-align:left">Complete Details of the Web Page</h1>
+      </div>
+	  <div class=backgroundw>
+      <div class="item">
+	    <h2>Information of the website</h2></br></br>
+      </div>
+      <div class="item">
+        <p>Enter the url of the website<span class="required">*</span></p>
+        <input type="text" name="address" id="url"
+       placeholder="https://example.com"
+        size="30"
+       required>
+      </div>
+      
+        <div class="btn-block">
+            <button type="submit">Submit</button>
+        </div>
+		</div>
+       
+{{end}}
+</form>
+    
+</div>
+</body>
+</html>
